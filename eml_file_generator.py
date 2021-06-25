@@ -18,7 +18,7 @@ def email_metadata_content_prompt():
 		to_ = input('To: ').lower()
 		subject_ = input('Subject: ').title()
 		content_list = []
-		print('\nContent: (Use \'AGKdone\' for saving)\n')
+		print('\nContent: (Use \'AGKdone\' to save your content)\n')
 		while True:
 			line = input()
 			if 'AGKdone' in line:
