@@ -44,7 +44,7 @@ def eml_metadata_content_wrap(from_, sent_, to_, subject_, content):
 
 #OPEN .EML FILE, SAVE, EXPORT.
 def eml_file_creation(eml):
-	name = input('\nWrite down file name (Don\'t include \'.eml\' ) >> ')
+	name = input('\nWrite down the file name (Don\'t include \'.eml\' ) >> ')
 	with open(name + '.eml', 'w') as email:
 		email.write(''.join(eml))
 		print('\neml file has been exported!\n')
