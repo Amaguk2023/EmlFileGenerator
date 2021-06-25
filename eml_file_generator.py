@@ -38,7 +38,7 @@ def eml_metadata_content_wrap(from_, sent_, to_, subject_, content):
 	eml_Sent= ('Sent: {sent_}'.format(sent_=sent_))
 	eml_To= ('To: {to_} '.format(to_=to_))
 	eml_Subject = ('Subject: {subject_}'.format(subject_=subject_))
-	eml = eml_From + '\n' + eml_Sent + '\n' + eml_To + '\n' + eml_Subject + '\n' + '\n' + content
+	eml = eml_From + '\n' + eml_Sent + '\n' + eml_To + '\n' + eml_Subject + '\n' + '\n' + content + '\n'
 	eml_file_creation(eml)
 
 
