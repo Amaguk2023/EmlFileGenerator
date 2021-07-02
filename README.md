@@ -6,4 +6,4 @@ Libraries used: sys, datetime, strings.
 
 *New emlf_file_generator version is WIP.*
 
-At the moment the only new addition to the code is a translator and ASCII logo. 
+At the moment the only new addition to the code is a translator, ASCII logo and some aesthetic changes. 
