@@ -8,4 +8,4 @@ Libraries used: sys, strings.
 
 At the moment the only new addition to the code is a translator. 
 
-Current program has a bug. If 'endofmail' is written without hitting enter, localbounderror is thrown. 
+Current program has a bug. If 'endofmail' is written without hitting enter, Unboundlocalerror is thrown. 
