@@ -1,4 +1,3 @@
-import string
 from datetime import datetime
 import sys
 from art import tprint
@@ -18,10 +17,10 @@ def email_metadata_content_prompt():
 		to_ = input('To: ').lower()
 		subject_ = input('Subject: ').title()
 		content_list = []
-		print('\nContent: (Use \'AGKdone\' to save your content)\n')
+		print('\nContent: (Click enter + \'endofmail\' to save your content)\n')
 		while True:
 			line = input()
-			if 'AGKdone' in line:
+			if 'endofmail' in line:
 				break
 			content_list.append(line)
 			content = ' '.join(content_list)
@@ -29,7 +28,7 @@ def email_metadata_content_prompt():
 					
 	except KeyboardInterrupt:
 		print('\nGoodbye\n')
-		sys.exit()
+		sys.exit()					
 	
 #WRAP THE METADATA AND CONTENT IN ORDER
 def eml_metadata_content_wrap(from_, sent_, to_, subject_, content):
