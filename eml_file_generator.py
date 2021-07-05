@@ -2,7 +2,6 @@ import string
 from datetime import datetime
 import sys
 
-
 #EMAIL METADATA AND CONTENT PROMPT
 def email_metadata_content_prompt():
 	try:
@@ -30,7 +29,6 @@ def email_metadata_content_prompt():
 	except KeyboardInterrupt:
 		print('\nGoodbye\n')
 		sys.exit()
-
 	
 #WRAP THE METADATA AND CONTENT IN ORDER
 def eml_metadata_content_wrap(from_, sent_, to_, subject_, content):
@@ -40,7 +38,6 @@ def eml_metadata_content_wrap(from_, sent_, to_, subject_, content):
 	eml_Subject = ('Subject: {subject_}'.format(subject_=subject_))
 	eml = eml_From + '\n' + eml_Sent + '\n' + eml_To + '\n' + eml_Subject + '\n' + '\n' + content + '\n'
 	eml_file_creation(eml)
-
 
 #OPEN .EML FILE, SAVE, EXPORT.
 def eml_file_creation(eml):
