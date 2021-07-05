@@ -1,6 +1,7 @@
 import string
 from datetime import datetime
 import sys
+from art import tprint
 
 #EMAIL METADATA AND CONTENT PROMPT
 def email_metadata_content_prompt():
@@ -48,6 +49,11 @@ def eml_file_creation(eml):
 
 #FIRST MESSAGE, FIRST CALL
 print('\nWelcome to AGK eml file generator\n')
+
+tprint('''
+	EML
+	FILE
+	GENERATOR''', font='aquaplan')
 
 if __name__ == '__main__':
 	email_metadata_content_prompt()
