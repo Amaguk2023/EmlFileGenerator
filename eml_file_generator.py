@@ -48,7 +48,9 @@ def eml_file_creation(eml):
 
 #FIRST MESSAGE, FIRST CALL
 print('\nWelcome to AGK eml file generator\n')
-email_metadata_content_prompt()
+
+if __name__ == '__main__':
+	email_metadata_content_prompt()
 
 
 
