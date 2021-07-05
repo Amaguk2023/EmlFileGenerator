@@ -6,4 +6,4 @@ Libraries used: sys, datetime, strings.
 
 *New version is WIP*
 
-At the moment the only new addition to the code is a translator, ASCII logo and some aesthetic changes. 
+At the moment the only new addition to the code is a translator, ASCII logo and aesthetic changes. 
