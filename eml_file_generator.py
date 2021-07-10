@@ -24,9 +24,8 @@ def email_metadata_content_prompt():
 
 #CONTENT CREATION PROMPT		
 def content_creation(from_, sent_, to_, subject_):
-	print('\nContent: (Click enter + \'endofmail\' to save your content, else UnboundLocalError will be thrown.)\n')
+	print('\nContent: (Write \'endofmail\' after hitting enter to save the content or else an UnboundLocalError will be thrown.)\n')
 	content_list = []
-	
 	while True:
 		line = input()
 		if 'endofmail' in line:
