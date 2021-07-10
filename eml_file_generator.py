@@ -2,34 +2,39 @@ from datetime import datetime
 import sys
 from art import tprint
 
-#EMAIL METADATA AND CONTENT PROMPT
+#METADATA CREATION PROMPT
 def email_metadata_content_prompt():
-	try:
+	from_ = False
+	while not from_:
+		try:
+			from_ = input('From: ').lower()
+			sent_ = input('Sent: (T = Today / N = New Date) ').title()
+			if sent_ == 'T':
+				sent_ = datetime.now()
+			else:
+				sent_ = input('Sent: ').title()	
+			to_ = input('To: ').lower()
+			subject_ = input('Subject: ').title()
+			content_creation(from_, sent_, to_, subject_)
+		except ValueError:
+			print('Check your spelling, value not accepted')
+		except KeyboardInterrupt:
+			print('\nGoodbye\n')
+			sys.exit()
 
-		from_ = input('From: ').lower()
-		sent_ = input('Sent: (T = Today / N = New Date) ').title()
-		if sent_ == 'T':
-			sent_ = datetime.now()
-
-		else:
-			sent_ = input('Sent: ').title()
-		
-		to_ = input('To: ').lower()
-		subject_ = input('Subject: ').title()
-		content_list = []
-		print('\nContent: (Click enter + \'endofmail\' to save your content)\n')
-		while True:
-			line = input()
-			if 'endofmail' in line:
-				break
-			content_list.append(line)
-			content = ' '.join(content_list)
-		eml_metadata_content_wrap(from_, sent_, to_, subject_, content)
-					
-	except KeyboardInterrupt:
-		print('\nGoodbye\n')
-		sys.exit()					
+#CONTENT CREATION PROMPT		
+def content_creation(from_, sent_, to_, subject_):
+	print('\nContent: (Click enter + \'endofmail\' to save your content, else UnboundLocalError will be thrown.)\n')
+	content_list = []
 	
+	while True:
+		line = input()
+		if 'endofmail' in line:
+			break
+		content_list.append(line)
+		content = '\n'.join(content_list)
+	eml_metadata_content_wrap(from_, sent_, to_, subject_, content)
+				
 #WRAP THE METADATA AND CONTENT IN ORDER
 def eml_metadata_content_wrap(from_, sent_, to_, subject_, content):
 	eml_From = ('From: {from_}'.format(from_=from_))
@@ -46,9 +51,8 @@ def eml_file_creation(eml):
 		email.write(''.join(eml))
 		print('\neml file has been exported!\n')
 
-#FIRST MESSAGE, FIRST CALL
+#INITIAL MESSAGE
 print('\nWelcome to AGK eml file generator\n')
-
 tprint('''
 	EML
 	FILE
